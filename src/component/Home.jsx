@@ -2,7 +2,6 @@ import { TiDelete } from "react-icons/ti";
 import { FaTwitter } from "react-icons/fa";
 import { useState ,useEffect } from "react";
 import axios from "axios";
-import { Container } from "postcss";
 export default function Home(){
     const api = "https://gist.githubusercontent.com/pandemonia/21703a6a303e0487a73b2610c8db41ab/raw/82e3ef99cde5b6e313922a5ccce7f38e17f790ac/twubric.json";
     const [data , setData ] = useState([]);
@@ -27,11 +26,12 @@ export default function Home(){
     }
     return(
         <>
-        <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32">
+             <nav className="bg-black w-full fixed top-0 ">
+                <h1 className="text-2xl text-center lg:text-left text-yellow-300 p-2 font-bold">TWUBRIC APP</h1>
+              </nav>
+        <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32 mt-12">
         <section>
-            <div>
-                
-            </div>
+            
         </section>
         
         <section className="p-1 md:p-5 items-center gap-5 font-semibold text-blue-400 flex flex-wrap" >
