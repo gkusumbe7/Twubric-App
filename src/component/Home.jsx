@@ -1,6 +1,5 @@
 import { TiDelete } from "react-icons/ti";
 import { FaTwitter } from "react-icons/fa";
-
 import { useState ,useEffect } from "react";
 import axios from "axios";
 import { Container } from "postcss";
@@ -22,6 +21,10 @@ export default function Home(){
         return date.toLocaleDateString();
     }
 
+    const userDelete = (index)=>{
+        const updateData = data.filter((_,i)=>i != index)
+        setData(updateData)
+    }
     return(
         <>
         <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32">
@@ -37,7 +40,7 @@ export default function Home(){
                 <div className="flex gap-48 ">
                     <p className="text-2xl hover:text-3xl w-5"><FaTwitter/></p>
                     
-                    <button className="text-3xl"><TiDelete/></button>
+                    <button className="text-3xl" onClick={()=> userDelete(index)}><TiDelete/></button>
                 </div>
                 <div className="flex flex-col items-center">
                     <img src={data.image} alt="img" className="rounded-full shadow-xl p-1 bg-black hover:bg-white"/>
