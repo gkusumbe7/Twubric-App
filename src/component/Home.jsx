@@ -26,13 +26,21 @@ export default function Home(){
     }
     return(
         <>
-             <nav className="bg-black w-full fixed top-0 ">
+        <nav className="bg-black w-full fixed top-0 ">
                 <h1 className="text-2xl text-center lg:text-left text-yellow-300 p-2 font-bold">TWUBRIC APP</h1>
-              </nav>
-        <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32 mt-12">
-        <section>
-            
+        </nav>
+        <section className="text-yellow-50 mt-2 w-full fixed top-10">
+            <div className="flex flex-col ">
+                <h1 className="font-bold text-black">Joined Twitter between</h1>
+                <section className="flex gap-2 text-black text-sm p-1">
+                <label htmlFor="startDate" className="font-semibold">Start Date</label>
+                <input type="date" name="startDate" id="startDate"  />
+                <label htmlFor="endDate" className="font-semibold">End Date</label>
+                <input type="date" name="endDate" id="endDate" />
+                </section>
+            </div>
         </section>
+        <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32 mt-28">
         
         <section className="p-1 md:p-5 items-center gap-5 font-semibold text-blue-400 flex flex-wrap" >
             {data.map((data , index )=>(
