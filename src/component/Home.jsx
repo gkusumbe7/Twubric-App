@@ -83,13 +83,14 @@ export default function Home() {
     });
     setData(sortedData);
   };
-  //   sortByfriendDsc = () => {
-  //     const sortedData = [...data].sort((a, b) => {
-  //       return b.twubric.friends - a.twubric.friends;
-  //     });
+  
+   const  sortByfriendDsc = () => {
+      const sortedData = [...data].sort((a, b) => {
+        return b.twubric.friends - a.twubric.friends;
+      });
 
-  //     setData(sortedData);
-  //   };
+      setData(sortedData);
+    };
 
   const sortByinfluenceAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -97,13 +98,13 @@ export default function Home() {
     });
     setData(sortedData);
   };
-  //   sortByinfluenceDsc = () => {
-  //     const sortedData = [...data].sort((a, b) => {
-  //       return b.twubric.influence - a.twubric.influence;
-  //     });
+   const sortByinfluenceDsc = () => {
+      const sortedData = [...data].sort((a, b) => {
+        return b.twubric.influence - a.twubric.influence;
+      });
 
-  //     setData(sortedData);
-  //   };
+      setData(sortedData);
+    };
 
   const sortBychirpinessAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -112,13 +113,13 @@ export default function Home() {
     setData(sortedData);
   };
 
-  //   sortBychirpinessDsc = () => {
-  //     const sortedData = [...data].sort((a, b) => {
-  //       return b.twubric.chirpiness - a.twubric.chirpiness;
-  //     });
+   const sortBychirpinessDsc = () => {
+      const sortedData = [...data].sort((a, b) => {
+        return b.twubric.chirpiness - a.twubric.chirpiness;
+      });
 
-  //     setData(sortedData);
-  //   };
+      setData(sortedData);
+    };
   return (
     <>
       {/* Nav */}
