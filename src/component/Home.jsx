@@ -128,25 +128,25 @@ export default function Home() {
           <FaTwitter className="inline mb-1 text-center mx-2 text-sky-600" />
         </h1>
       </nav>
-      <section className="fixed top-10 flex flex-col flex-wrap">
+      <section className="fixed  top-12 w-full flex flex-col justify-center px-1 md:py-3 bg-white  md:bg-blue-100 lg:flex-row md:flex-row flex-wrap    border-black">
         {/* filters Section */}
 
-        <div className="flex flex-col gap-4 font-semibold py-2 px-4 bg-blue-100  text-black">
-          <div class="flex gap-6 justify-center flex-wrap">
-            <div className="flex flex-col text-md items-center">
+        <div className="flex gap-4 font-semibold  py-2 px-4 bg-blue-100  border-black text-black">
+          <div class="flex gap-6 justify-center  flex-wrap">
+            <div className="flex flex-col lg:flex-row md:flex-row text-md items-center">
               <h3>Twubric Score</h3>
               <div>
                 <BsSortNumericDown
                   onClick={() => sortByTScoreAsc()}
                   className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"
                 />
-                <BsSortNumericDownAlt
+                <BsSortNumericDownAlt 
                   onClick={() => sortByTScoreDec()}
                   className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"
                 />
               </div>
             </div>
-            <div className="flex flex-col text-md items-center">
+            <div className="flex flex-col lg:flex-row md:flex-row text-md items-center">
               <h3>Friends</h3>
               <div>
                 <BsSortNumericDown
@@ -159,7 +159,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex flex-col text-md items-center">
+            <div className="flex flex-col lg:flex-row md:flex-row text-md items-center">
               <h3>Influence</h3>
               <div>
                 <BsSortNumericDown
@@ -172,7 +172,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex flex-col text-md items-center">
+            <div className="flex flex-col lg:flex-row md:flex-row text-md items-center">
               <h3>Chirpiness</h3>
               <div>
                 <BsSortNumericDown
@@ -189,8 +189,8 @@ export default function Home() {
         </div>
 
         {/* filters Section */}
-        <div className="bg-blue-50 p-1 flex flex-col justify-center flex-wrap items-center">
-          <h1 className="font-bold text-[17px] px-2 ">
+        <div className="bg-blue-50 md:bg-blue-100 md:p-1  flex flex-col lg:flex-row md:flex-row md:items-center justify-center flex-wrap items-center  border-black">
+          <h1 className="font-bold text-[16px]  px-2 md:pb-2 ">
             Joined Twitter between
           </h1>
           <div className="flex flex-wrap gap-2 items-center text-[14px] p-1 ">
@@ -217,24 +217,24 @@ export default function Home() {
               onChange={handleEndDateChange}
             />
             <button
-              className="text-md py-1 border border-gray-400 boxshadow-xl px-2 rounded-md"
+              className="text-md py-1 border border-gray-400 boxshadow-xl px-2 rounded-md hover:bg-red-200" 
               onClick={() => filterByDate()}
             >
-              <FaSearch />
+              <FaSearch  />
             </button>
           </div>
         </div>
       </section>
 
       {/* Main Section */}
-      <div className="mt-48 border pl-14">
+      <div className="mt-64 md:mt-28  pl-12 md:pl-24">
         <section className="p-1 md:p-5 items-center gap-2 font-semibold text-blue-400 flex flex-wrap">
           {data.map((data, index) => (
             <section
               className="bg-black border py-3 rounded-md shadow-md flex flex-col gap-1 items-center"
               key={index}
             >
-              <div className="flex gap-48 ">
+              <div className="flex gap-32 justify-between md:gap-48 ">
                 <p className="text-2xl hover:text-3xl w-5">
                   <FaTwitter />
                 </p>
