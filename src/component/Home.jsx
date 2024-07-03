@@ -229,11 +229,11 @@ export default function Home() {
         <section className="p-1 md:p-5 items-center gap-2 font-semibold text-blue-400 flex flex-wrap">
           {data.map((data, index) => (
             <section
-              className="bg-black border py-3 rounded-md shadow-md flex flex-col gap-1 items-center"
+              className="bg-black hover:bg-gray-950 border py-3 rounded-md shadow-md flex flex-col gap-1 items-center"
               key={index}
             >
-              <div className="flex gap-32 justify-between md:gap-48 ">
-                <p className="text-2xl hover:text-3xl w-5">
+              <div className="flex md:gap-48 gap-24">
+                <p className="text-2xl hover:text-3xl md:w-5">
                   <FaTwitter />
                 </p>
 
@@ -245,7 +245,7 @@ export default function Home() {
                 <img
                   src={data.image}
                   alt="img"
-                  className="rounded-full w-24 shadow-xl p-1 bg-black hover:bg-white"
+                  className="rounded-full w-24 shadow-xl p-1 bg-black hover:bg-yellow-500"
                 />
                 <p className="font-semibold text-xl my-1 text-center">
                   {data.fullname}
