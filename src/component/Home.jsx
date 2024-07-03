@@ -5,11 +5,10 @@ import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { BsSortNumericDown } from "react-icons/bs";
 import { BsSortNumericDownAlt } from "react-icons/bs";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 export default function Home() {
-    
   const api =
     "https://gist.githubusercontent.com/pandemonia/21703a6a303e0487a73b2610c8db41ab/raw/82e3ef99cde5b6e313922a5ccce7f38e17f790ac/twubric.json";
   const [data, setData] = useState([]);
@@ -79,13 +78,13 @@ export default function Home() {
     });
     setData(sortedData);
   };
-//   sortByfriendDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.friends - a.twubric.friends;
-//     });
+  //   sortByfriendDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.friends - a.twubric.friends;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
 
   const sortByinfluenceAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -93,13 +92,13 @@ export default function Home() {
     });
     setData(sortedData);
   };
-//   sortByinfluenceDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.influence - a.twubric.influence;
-//     });
+  //   sortByinfluenceDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.influence - a.twubric.influence;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
 
   const sortBychirpinessAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -108,158 +107,125 @@ export default function Home() {
     setData(sortedData);
   };
 
-//   sortBychirpinessDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.chirpiness - a.twubric.chirpiness;
-//     });
+  //   sortBychirpinessDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.chirpiness - a.twubric.chirpiness;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
   return (
     <>
       {/* Nav */}
-      <nav className="bg-black w-full fixed top-0 ">
-        <h1 className="text-2xl text-center lg:text-center text-yellow-300 p-2 font-bold">
-          TWUBRIC APP{" "}
-          <FaTwitter className="inline mb-1 text-center mx-2 text-sky-300" />
+      <nav className="bg-blue-400 boxshadow-xl py-1">
+        <h1 className="text-center font-bold text-white">
+          TWUBRIC APP
+          <FaTwitter className="inline mb-1   boxshadow-xl text-center mx-2 text-sky-50" />
         </h1>
       </nav>
+
       {/* filters Section */}
-      <section className="lg:flex justify-between lg:px-2 text-yellow-50  w-full fixed top-10 bg-gray-500 text-white">
-        <div className="flex flex-col flex-wrap">
-          <h1 className="font-bold text-xl px-2 ">Joined Twitter between</h1>
-          <section className="flex flex-wrap lg:flex lg:flex-row gap-2 items-center text-[12px] md:text-sm p-2">
-            <div className="flex ">
-              <label htmlFor="startDate" className="font-semibold md:mr-1  ">
-                Start Date :
-              </label>
+      <section >
+
+      {/*   Joined Twitter Between */}
+        <section className="border" >
+          <h1 className="font-semibold ">Joined Twitter Between</h1>
+          <div className="border flex justify-around bg-blue-50 font-semibold">
+
+            <div className="border flex flex-col text-sm">
+              <label htmlFor="startDate">Start Date :</label>
               <input
                 type="date"
                 name="startDate"
                 id="startDate"
-                className="text-black border w-9 md:w-auto boxshadow-xl px-2  rounded-md"
+                className="w-28 p-0.5 rounded-xl"
                 onChange={handleStartDateChange}
               />
             </div>
-            <label htmlFor="endDate" className="font-semibold md:mr-1">
-              End Date :
-            </label>
+            <div className="border flex flex-col text-sm">
+            <label htmlFor="endDate">End Date :</label>
             <input
               type="date"
               name="endDate"
               id="endDate"
-              className="text-black border  w-9 md:w-auto boxshadow-xl px-2 rounded-md"
+              className="w-28"
               onChange={handleEndDateChange}
             />
-            <button
-              className="text-xl py-1 border border-gray-400 boxshadow-xl px-2 rounded-md"
-              onClick={() => filterByDate()}
-            >
+            </div>
+            
+            <button onClick={() => filterByDate()}>
               <FaSearch />
             </button>
-          </section>
-        </div>
-        <div className="flex flex-col gap-4 font-semibold p-2">
+          </div>
+        </section>
+
+        <section>
           <h1 className="font-bold text-xl ">Sort Filter</h1>
           <div class="flex gap-3">
             <button className="text-[14px] md:text-md">
               Twubric Score
-              <BsSortNumericDown
-                onClick={() => sortByTScoreAsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-              <BsSortNumericDownAlt
-            
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
+              <BsSortNumericDown onClick={() => sortByTScoreAsc()} />
+              <BsSortNumericDownAlt />
             </button>
             <button className="text-[14px] md:text-md">
               Friends
-              <BsSortNumericDown
-                onClick={() => sortByfriendAsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-              <BsSortNumericDownAlt
-                onClick={() => sortByfriendDsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
+              <BsSortNumericDown onClick={() => sortByfriendAsc()} />
+              <BsSortNumericDownAlt onClick={() => sortByfriendDsc()} />
             </button>
             <button className="text-[14px] md:text-md">
               Influence
-              <BsSortNumericDown
-                onClick={() => sortByinfluenceAsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-              <BsSortNumericDownAlt
-                onClick={() => sortByinfluenceDsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
+              <BsSortNumericDown onClick={() => sortByinfluenceAsc()} />
+              <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()} />
             </button>
             <button className="text-[14px] md:text-md">
               Chirpiness
-              <BsSortNumericDown
-                onClick={() => sortBychirpinessAsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-              <BsSortNumericDownAlt
-                onClick={() => sortBychirpinessDsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
+              <BsSortNumericDown onClick={() => sortBychirpinessAsc()} />
+              <BsSortNumericDownAlt onClick={() => sortBychirpinessDsc()} />
             </button>
           </div>
-        </div>
+        </section>
+
       </section>
       {/* Main Section */}
-      <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32 sm:mt-52 mt-64 ">
-        <section className="p-1 md:p-5 items-center gap-2 font-semibold text-blue-400 flex flex-wrap">
+      <div>
+        <section>
           {data.map((data, index) => (
-            <section
-              className="bg-black border py-3 rounded-md shadow-md flex flex-col gap-1 items-center"
-              key={index}
-            >
-              <div className="flex gap-48 ">
-                <p className="text-2xl hover:text-3xl w-5">
+            <section key={index}>
+              <div>
+                <p>
                   <FaTwitter />
                 </p>
 
-                <button className="text-3xl" onClick={() => userDelete(index)}>
+                <button onClick={() => userDelete(index)}>
                   <TiDelete />
                 </button>
               </div>
-              <div className="flex flex-col items-center">
-                <img
-                  src={data.image}
-                  alt="img"
-                  className="rounded-full w-24 shadow-xl p-1 bg-black hover:bg-white"
-                />
-                <p className="font-semibold text-xl my-1 text-center">
-                  {data.fullname}
-                </p>
-                <p className="text-center text-gray-400 text-sm">
-                  @{data.username}
-                </p>
-                <p className="text-md text-center">{data.twubric.total}</p>
+              <div>
+                <img src={data.image} alt="img" />
+                <p>{data.fullname}</p>
+                <p>@{data.username}</p>
+                <p>{data.twubric.total}</p>
               </div>
 
-              <div className="flex items-center text-[15px] gap-[20px] p-4 text-gray-100">
-                <div className=" flex flex-col items-center ">
-                  <p className=" text-center">{data.twubric.friends}</p>
-                  <label className="text-center">Friends</label>
+              <div>
+                <div>
+                  <p>{data.twubric.friends}</p>
+                  <label>Friends</label>
                 </div>
 
-                <div className="flex flex-col items-center text-center">
-                  <p className="text-center">{data.twubric.influence}</p>
-                  <label className="text-center ">Influence</label>
+                <div>
+                  <p>{data.twubric.influence}</p>
+                  <label>Influence</label>
                 </div>
 
-                <div className="flex flex-col items-center text-center">
-                  <p className="text-center">{data.twubric.chirpiness}</p>
-                  <label className="text-center">Chirpiness</label>
+                <div>
+                  <p>{data.twubric.chirpiness}</p>
+                  <label>Chirpiness</label>
                 </div>
               </div>
-              <div className="flex gap-1 text-gray-400 text-sm font-normal">
-                <label className="text-right">Joining Date:</label>
-                <p className="">{convertTimestampToDate(data.join_date)}</p>
+              <div>
+                <label>Joining Date:</label>
+                <p>{convertTimestampToDate(data.join_date)}</p>
               </div>
             </section>
           ))}
