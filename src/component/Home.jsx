@@ -5,11 +5,10 @@ import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { BsSortNumericDown } from "react-icons/bs";
 import { BsSortNumericDownAlt } from "react-icons/bs";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 export default function Home() {
-    
   const api =
     "https://gist.githubusercontent.com/pandemonia/21703a6a303e0487a73b2610c8db41ab/raw/82e3ef99cde5b6e313922a5ccce7f38e17f790ac/twubric.json";
   const [data, setData] = useState([]);
@@ -84,13 +83,13 @@ export default function Home() {
     });
     setData(sortedData);
   };
-//   sortByfriendDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.friends - a.twubric.friends;
-//     });
+  //   sortByfriendDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.friends - a.twubric.friends;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
 
   const sortByinfluenceAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -98,13 +97,13 @@ export default function Home() {
     });
     setData(sortedData);
   };
-//   sortByinfluenceDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.influence - a.twubric.influence;
-//     });
+  //   sortByinfluenceDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.influence - a.twubric.influence;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
 
   const sortBychirpinessAsc = () => {
     const sortedData = [...data].sort((a, b) => {
@@ -113,13 +112,13 @@ export default function Home() {
     setData(sortedData);
   };
 
-//   sortBychirpinessDsc = () => {
-//     const sortedData = [...data].sort((a, b) => {
-//       return b.twubric.chirpiness - a.twubric.chirpiness;
-//     });
+  //   sortBychirpinessDsc = () => {
+  //     const sortedData = [...data].sort((a, b) => {
+  //       return b.twubric.chirpiness - a.twubric.chirpiness;
+  //     });
 
-//     setData(sortedData);
-//   };
+  //     setData(sortedData);
+  //   };
   return (
     <>
       {/* Nav */}
@@ -129,44 +128,72 @@ export default function Home() {
           <FaTwitter className="inline mb-1 text-center mx-2 text-sky-600" />
         </h1>
       </nav>
-      {/* filters Section */}
-      <section className="lg:flex justify-between lg:px-2  w-full fixed top-10 bg-gray-500 boxshadow-xl ">
-      
-      <div className="flex flex-col gap-4 font-semibold py-2 px-4 bg-blue-50  text-black">
-          <div class="flex gap-6 border border-black ">
+      <section className="fixed top-10 flex flex-col flex-wrap">
+        {/* filters Section */}
+
+        <div className="flex flex-col gap-4 font-semibold py-2 px-4 bg-blue-100  text-black">
+          <div class="flex gap-6 justify-center flex-wrap">
             <div className="flex flex-col text-md items-center">
               <h3>Twubric Score</h3>
-                <div>
-                <BsSortNumericDown    onClick={() => sortByTScoreAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
-                <BsSortNumericDownAlt onClick={() => sortByTScoreDec()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
-                </div>
+              <div>
+                <BsSortNumericDown
+                  onClick={() => sortByTScoreAsc()}
+                  className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"
+                />
+                <BsSortNumericDownAlt
+                  onClick={() => sortByTScoreDec()}
+                  className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"
+                />
+              </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Friends</h3>
-                <div>
-                <BsSortNumericDown    onClick={() => sortByfriendAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
-                <BsSortNumericDownAlt onClick={() => sortByfriendDsc()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
-                </div>
+              <div>
+                <BsSortNumericDown
+                  onClick={() => sortByfriendAsc()}
+                  className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"
+                />
+                <BsSortNumericDownAlt
+                  onClick={() => sortByfriendDsc()}
+                  className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"
+                />
+              </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Influence</h3>
-                <div>
-                <BsSortNumericDown    onClick={() => sortByinfluenceAsc()} className="inline text-xl border boxshadow-xl mr-1 "/>
-                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
-                </div>
+              <div>
+                <BsSortNumericDown
+                  onClick={() => sortByinfluenceAsc()}
+                  className="inline text-xl border boxshadow-xl mr-1 "
+                />
+                <BsSortNumericDownAlt
+                  onClick={() => sortByinfluenceDsc()}
+                  className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"
+                />
+              </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Chirpiness</h3>
-                <div>
-                <BsSortNumericDown    onClick={() => sortBychirpinessAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
-                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl p-0.5  hover:bg-orange-400"/>
-                </div>
+              <div>
+                <BsSortNumericDown
+                  onClick={() => sortBychirpinessAsc()}
+                  className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"
+                />
+                <BsSortNumericDownAlt
+                  onClick={() => sortByinfluenceDsc()}
+                  className="inline text-xl border boxshadow-xl p-0.5  hover:bg-orange-400"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col flex-wrap">
-          <h1 className="font-bold text-xl px-2 ">Joined Twitter between</h1>
-          <section className="flex flex-wrap lg:flex lg:flex-row gap-2 items-center text-[12px] md:text-sm p-2 ">
+
+        {/* filters Section */}
+        <div className="bg-blue-50 p-1 flex flex-col justify-center flex-wrap items-center">
+          <h1 className="font-bold text-[17px] px-2 ">
+            Joined Twitter between
+          </h1>
+          <div className="flex flex-wrap gap-2 items-center text-[14px] p-1 ">
             <div className="flex ">
               <label htmlFor="startDate" className="font-semibold md:mr-1  ">
                 Start Date :
@@ -190,17 +217,17 @@ export default function Home() {
               onChange={handleEndDateChange}
             />
             <button
-              className="text-xl py-1 border border-gray-400 boxshadow-xl px-2 rounded-md"
+              className="text-md py-1 border border-gray-400 boxshadow-xl px-2 rounded-md"
               onClick={() => filterByDate()}
             >
               <FaSearch />
             </button>
-          </section>
+          </div>
         </div>
-        
       </section>
+
       {/* Main Section */}
-      <div className=" md:flex md:flex-col  md:mx-28 lg:mx-32 sm:mt-52 mt-64 ">
+      <div className="mt-48 border pl-14">
         <section className="p-1 md:p-5 items-center gap-2 font-semibold text-blue-400 flex flex-wrap">
           {data.map((data, index) => (
             <section
