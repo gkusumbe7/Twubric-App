@@ -137,36 +137,36 @@ export default function Home() {
             <div className="flex flex-col text-md items-center">
               <h3>Twubric Score</h3>
                 <div>
-                <BsSortNumericDown    onClick={() => sortByTScoreAsc()} className="inline text-xl border boxshadow-xl ml-1"/>
-                <BsSortNumericDownAlt onClick={() => sortByTScoreDec()}className="inline text-xl border boxshadow-xl ml-1"/>
+                <BsSortNumericDown    onClick={() => sortByTScoreAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
+                <BsSortNumericDownAlt onClick={() => sortByTScoreDec()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
                 </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Friends</h3>
                 <div>
-                <BsSortNumericDown    onClick={() => sortByfriendAsc()} className="inline text-xl border boxshadow-xl ml-1"/>
-                <BsSortNumericDownAlt onClick={() => sortByfriendDsc()}className="inline text-xl border boxshadow-xl ml-1"/>
+                <BsSortNumericDown    onClick={() => sortByfriendAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
+                <BsSortNumericDownAlt onClick={() => sortByfriendDsc()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
                 </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Influence</h3>
                 <div>
-                <BsSortNumericDown    onClick={() => sortByinfluenceAsc()} className="inline text-xl border boxshadow-xl ml-1"/>
-                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl ml-1"/>
+                <BsSortNumericDown    onClick={() => sortByinfluenceAsc()} className="inline text-xl border boxshadow-xl mr-1 "/>
+                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl p-0.5 hover:bg-orange-400"/>
                 </div>
             </div>
             <div className="flex flex-col text-md items-center">
               <h3>Chirpiness</h3>
                 <div>
-                <BsSortNumericDown    onClick={() => sortBychirpinessAsc()} className="inline text-xl border boxshadow-xl ml-1"/>
-                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl ml-1"/>
+                <BsSortNumericDown    onClick={() => sortBychirpinessAsc()} className="inline text-xl border boxshadow-xl mr-1 p-0.5 hover:bg-orange-400"/>
+                <BsSortNumericDownAlt onClick={() => sortByinfluenceDsc()}className="inline text-xl border boxshadow-xl p-0.5  hover:bg-orange-400"/>
                 </div>
             </div>
           </div>
         </div>
         <div className="flex flex-col flex-wrap">
           <h1 className="font-bold text-xl px-2 ">Joined Twitter between</h1>
-          <section className="flex flex-wrap lg:flex lg:flex-row gap-2 items-center text-[12px] md:text-sm p-2">
+          <section className="flex flex-wrap lg:flex lg:flex-row gap-2 items-center text-[12px] md:text-sm p-2 ">
             <div className="flex ">
               <label htmlFor="startDate" className="font-semibold md:mr-1  ">
                 Start Date :
