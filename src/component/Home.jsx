@@ -83,7 +83,7 @@ export default function Home() {
     });
     setData(sortedData);
   };
-  
+
    const  sortByfriendDsc = () => {
       const sortedData = [...data].sort((a, b) => {
         return b.twubric.friends - a.twubric.friends;
@@ -192,9 +192,10 @@ export default function Home() {
         {/* filters Section */}
         <div className="bg-blue-50 md:bg-blue-100 md:p-1  flex flex-col lg:flex-row md:flex-row md:items-center justify-center flex-wrap items-center  border-black">
           <h1 className="font-bold text-[16px]  px-2 md:pb-2 ">
-            Joined Twitter between
+            Joined Twitter between :-
           </h1>
           <div className="flex flex-wrap gap-2 items-center text-[14px] p-1 ">
+           
             <div className="flex ">
               <label htmlFor="startDate" className="font-semibold md:mr-1  ">
                 Start Date :
@@ -207,16 +208,12 @@ export default function Home() {
                 onChange={handleStartDateChange}
               />
             </div>
-            <label htmlFor="endDate" className="font-semibold md:mr-1">
-              End Date :
-            </label>
-            <input
-              type="date"
-              name="endDate"
-              id="endDate"
-              className="text-black border  w-9 md:w-auto boxshadow-xl px-2 rounded-md"
-              onChange={handleEndDateChange}
-            />
+
+           <div className="flex">
+              <label htmlFor="endDate" className="font-semibold md:mr-1">End Date :</label>
+              <input type="date" name="endDate" id="endDate"  className="text-black border  w-9 md:w-auto boxshadow-xl px-2 rounded-md"  onChange={handleEndDateChange} />
+           </div>
+                       
             <button
               className="text-md py-1 border border-gray-400 boxshadow-xl px-2 rounded-md hover:bg-red-200" 
               onClick={() => filterByDate()}
