@@ -5,8 +5,11 @@ import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { BsSortNumericDown } from "react-icons/bs";
 import { BsSortNumericDownAlt } from "react-icons/bs";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 export default function Home() {
+    
   const api =
     "https://gist.githubusercontent.com/pandemonia/21703a6a303e0487a73b2610c8db41ab/raw/82e3ef99cde5b6e313922a5ccce7f38e17f790ac/twubric.json";
   const [data, setData] = useState([]);
@@ -33,6 +36,7 @@ export default function Home() {
   const userDelete = (index) => {
     const updateData = data.filter((_, i) => i != index);
     setData(updateData);
+    toast.success("Delet Successfully");
   };
 
   const handleStartDateChange = (e) => {
