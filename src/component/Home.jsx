@@ -72,7 +72,12 @@ export default function Home() {
     });
     setData(sortedData);
   };
-
+  const sortByTScoreDec = () => {
+    const sortedData = [...data].sort((a, b) => {
+      return b.twubric.total - a.twubric.total;
+    });
+    setData(sortedData);
+  };
   const sortByfriendAsc = () => {
     const sortedData = [...data].sort((a, b) => {
       return a.twubric.friends - b.twubric.friends;
@@ -127,18 +132,15 @@ export default function Home() {
       {/* filters Section */}
       <section className="lg:flex justify-between lg:px-2  w-full fixed top-10 bg-gray-500 boxshadow-xl ">
       <div className="flex flex-col gap-4 font-semibold p-2 bg-blue-50  text-black">
-          <div class="flex gap-2 text-md">
-            <button className="">
-              Twubric Score
-              <BsSortNumericDown
-                onClick={() => sortByTScoreAsc()}
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-              <BsSortNumericDownAlt
-            
-                className="inline text-xl border boxshadow-xl ml-1"
-              />
-            </button>
+          <div class="flex gap-2 border border-black">
+            <div className="flex flex-col text-md">
+              <h3>Twubric Score</h3>
+                <div>
+                <BsSortNumericDown    onClick={() => sortByTScoreAsc()} className="inline text-xl border boxshadow-xl ml-1"/>
+                <BsSortNumericDownAlt onClick={() => sortByTScoreDec()}className="inline text-xl border boxshadow-xl ml-1"/>
+                </div>
+            </div>
+
             <button className="">
               Friends
               <BsSortNumericDown
